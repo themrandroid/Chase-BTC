@@ -1,4 +1,6 @@
 # app.py
+import sys, os
+sys.path.append(os.path.dirname(__file__))
 import streamlit as st
 from live_signal import display_prediction_card, fetch_prediction
 from backtest_tab import show_backtest_tab

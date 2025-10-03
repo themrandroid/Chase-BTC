@@ -5,7 +5,6 @@ from datetime import datetime
 import requests
 import pandas as pd
 import plotly.graph_objects as go
-import os
 
 
 API_BASE = "https://chase-btc.onrender.com"

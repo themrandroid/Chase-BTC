@@ -1,7 +1,6 @@
 # live_signal.py
 import requests
 import streamlit as st
-import os
 
 API_BASE = "https://chase-btc.onrender.com"
 
