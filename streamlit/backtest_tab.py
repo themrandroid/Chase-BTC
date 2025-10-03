@@ -8,19 +8,19 @@ import plotly.graph_objects as go
 
 
 # URLs
-LIVE_API = "https://chase-btc.onrender.com"
-LOCAL_API = "http://localhost:8000"
+# LIVE_API = "https://chase-btc.onrender.com"
+# LOCAL_API = "http://localhost:8000"
 
-def get_api_base():
-    try:
-        # Try live API health endpoint
-        resp = requests.get(f"{LIVE_API}/health", timeout=2)
-        if resp.status_code == 200:
-            return LIVE_API
-    except:
-        pass
-    # Fallback to local API
-    return LOCAL_API
+# def get_api_base():
+#     try:
+#         # Try live API health endpoint
+#         resp = requests.get(f"{LIVE_API}/health", timeout=2)
+#         if resp.status_code == 200:
+#             return LIVE_API
+#     except:
+#         pass
+#     # Fallback to local API
+#     return LOCAL_API
 
 # API_BASE = get_api_base()
 API_BASE = "https://murmurlessly-unrequitable-tanna.ngrok-free.dev"
