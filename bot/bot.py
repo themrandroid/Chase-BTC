@@ -25,7 +25,7 @@ def get_api_base():
     return LOCAL_API
 
 # API_BASE = get_api_base()
-API_BASE = "LOCAL_API"
+API_BASE = LOCAL_API
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 if TELEGRAM_TOKEN is None:
