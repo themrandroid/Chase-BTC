@@ -9,7 +9,22 @@ import requests
 import pytz
 import os
 
-API_BASE = "https://chase-btc.onrender.com"  # FastAPI backend
+# URLs
+LIVE_API = "https://chase-btc.onrender.com"
+LOCAL_API = "http://localhost:8000"
+
+def get_api_base():
+    try:
+        # Try live API health endpoint
+        resp = requests.get(f"{LIVE_API}/health", timeout=2)
+        if resp.status_code == 200:
+            return LIVE_API
+    except:
+        pass
+    # Fallback to local API
+    return LOCAL_API
+
+API_BASE = get_api_base()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 if TELEGRAM_TOKEN is None:
