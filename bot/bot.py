@@ -11,7 +11,7 @@ import os
 
 # URLs
 LIVE_API = "https://chase-btc.onrender.com"
-LOCAL_API = "http://localhost:8000"
+LOCAL_API = "https://murmurlessly-unrequitable-tanna.ngrok-free.dev"
 
 def get_api_base():
     try:
