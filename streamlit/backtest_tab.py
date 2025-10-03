@@ -23,7 +23,7 @@ def get_api_base():
     return LOCAL_API
 
 # API_BASE = get_api_base()
-API_BASE = LOCAL_API
+API_BASE = "https://murmurlessly-unrequitable-tanna.ngrok-free.dev"
 
 def run_backtest(params):
     try:

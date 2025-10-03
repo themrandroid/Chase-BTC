@@ -18,7 +18,8 @@ def get_api_base():
     return LOCAL_API
 
 # API_BASE = get_api_base()
-API_BASE = LOCAL_API
+API_BASE = "https://murmurlessly-unrequitable-tanna.ngrok-free.dev"
+
 @st.cache_data(ttl=60*60*24)
 def fetch_prediction(threshold: float = 0.27):
     """
