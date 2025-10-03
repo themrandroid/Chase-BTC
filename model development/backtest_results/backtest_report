@@ -1,0 +1,12 @@
+{
+    "final_equity": 3171.790348460629,
+    "cumulative_return": 217.1790348460629,
+    "sharpe": 1.5150592557097788,
+    "max_drawdown": 464.8622744807669,
+    "max_drawdown_pct": 13.74653114463143,
+    "config": {
+        "threshold": 0.27,
+        "stop_loss": 0.05,
+        "take_profit": 0.3
+    }
+}

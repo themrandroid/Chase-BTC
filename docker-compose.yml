@@ -1,0 +1,45 @@
+# version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: chase_api
+    env_file: .env
+    environment:
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}     # only if API needs it (likely not)
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models:ro          # mount your models (read-only)
+      - ./backtest_results:/app/backtest_results
+    restart: unless-stopped
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: streamlit/Dockerfile
+    container_name: chase_streamlit
+    env_file: .env
+    environment:
+      API_BASE: http://api:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    volumes:
+      - ./streamlit:/app
+    restart: unless-stopped
+
+  bot:
+    build:
+      context: .
+      dockerfile: bot/Dockerfile
+    container_name: chase_bot
+    env_file: .env
+    environment:
+      API_BASE: http://api:8000
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+    depends_on:
+      - api
+    restart: unless-stopped

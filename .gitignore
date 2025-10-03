@@ -1,0 +1,14 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Env files / secrets
+.env
+api/.env
+bot/.env
+streamlit/.env
+
+
+# System/IDE
+.DS_Store
+.ipynb_checkpoints/
