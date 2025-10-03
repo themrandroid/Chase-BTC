@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import os
 
 
-API_BASE = os.getenv("API_BASE", "http://localhost:8000")
+API_BASE = "https://chase-btc.onrender.com"
 
 def run_backtest(params):
     try:

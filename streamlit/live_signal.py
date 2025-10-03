@@ -3,7 +3,7 @@ import requests
 import streamlit as st
 import os
 
-API_BASE = os.getenv("API_BASE", "http://localhost:8000")
+API_BASE = "https://chase-btc.onrender.com"
 
 @st.cache_data(ttl=60*60*24)
 def fetch_prediction(threshold: float = 0.27):
