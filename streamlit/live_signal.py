@@ -41,7 +41,7 @@ def display_prediction_card(prediction: dict):
             border-radius:20px;
             padding:12px;
             text-align:center;
-            width:400px;
+            width:350px;
             margin:auto;
             background-color:#1E1E1E;
         ">
