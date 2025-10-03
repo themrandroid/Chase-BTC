@@ -9,7 +9,7 @@ import requests
 import pytz
 import os
 
-API_BASE = os.getenv("API_BASE", "http://localhost:8000")  # FastAPI backend
+API_BASE = "https://chase-btc.onrender.com"  # FastAPI backend
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 if TELEGRAM_TOKEN is None:
