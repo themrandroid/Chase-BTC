@@ -17,8 +17,8 @@ def get_api_base():
     # Fallback to local API
     return LOCAL_API
 
-API_BASE = get_api_base()
-
+# API_BASE = get_api_base()
+API_BASE = LOCAL_API
 @st.cache_data(ttl=60*60*24)
 def fetch_prediction(threshold: float = 0.27):
     """

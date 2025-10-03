@@ -22,7 +22,8 @@ def get_api_base():
     # Fallback to local API
     return LOCAL_API
 
-API_BASE = get_api_base()
+# API_BASE = get_api_base()
+API_BASE = LOCAL_API
 
 def run_backtest(params):
     try:
