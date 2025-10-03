@@ -2,7 +2,22 @@
 import requests
 import streamlit as st
 
-API_BASE = "https://chase-btc.onrender.com"
+# URLs
+LIVE_API = "https://chase-btc.onrender.com"
+LOCAL_API = "http://localhost:8000"
+
+def get_api_base():
+    try:
+        # Try live API health endpoint
+        resp = requests.get(f"{LIVE_API}/health", timeout=2)
+        if resp.status_code == 200:
+            return LIVE_API
+    except:
+        pass
+    # Fallback to local API
+    return LOCAL_API
+
+API_BASE = get_api_base()
 
 @st.cache_data(ttl=60*60*24)
 def fetch_prediction(threshold: float = 0.27):
