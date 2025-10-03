@@ -154,7 +154,7 @@ async def daily_signal_job(context: ContextTypes.DEFAULT_TYPE):
 async def backtest(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     config = user_configs.get(user_id, {
-        "threshold": 0.6,
+        "threshold": 0.27,
         "sl": 0.05,
         "tp": 0.3,
         "position_size": 1.0
@@ -177,11 +177,13 @@ async def backtest(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     metrics = bt["metrics"]
     text = (
-        f"📈 *Backtest Results*\n"
+        f"📈 *Backtest Results:*\n" 
         f"Final Equity: ${metrics['final_equity']:.2f}\n"
         f"Cumulative Return: {metrics['cumulative_return']*100:.2f}%\n"
         f"Sharpe Ratio: {metrics['sharpe']:.2f}\n"
         f"Max Drawdown: {metrics['max_drawdown']*100:.2f}%"
+        f"Start Date: 2020-01-01" 
+        f"End Date: Today"
     )
 
     await update.message.reply_markdown(text)
